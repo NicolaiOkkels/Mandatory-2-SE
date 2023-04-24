@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <style>
+        .text-4xl {
+            font-size: 2.5rem;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<!-- Main Content -->
+<main>
+    <h1 class="text-4xl">Authentication App</h1>
+    <div id="authStatus">
+        <!-- JavaScript will update the content here -->
+    </div>
+</main>
+
+<script>
+    // This function should be connected to your authentication status
+    function isAuthenticated() {
+        // Return true if the user is authenticated, false otherwise
+    }
+
+    // Update the authentication status in the DOM
+    function updateAuthStatus() {
+        const authStatusElement = document.getElementById('authStatus');
+        if (isAuthenticated()) {
+            authStatusElement.innerHTML = 'You are logged in. <a href="/profile" class="underline">View your profile</a>.';
+        } else {
+            authStatusElement.innerHTML = 'You are not logged in. <a href="/login" class="underline">Login</a>.';
+        }
+    }
+
+    // Load partials and update authentication status on page load
+    window.onload = async function() {
+        updateAuthStatus();
+    }
+</script>
+
+</body>
+</html>
